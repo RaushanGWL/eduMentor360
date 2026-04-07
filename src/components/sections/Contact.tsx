@@ -3,18 +3,53 @@ import { useFormStatus } from 'react-dom';
 import { Headphones, Mail, CheckCircle, ArrowRight } from 'lucide-react';
 import type { FormState } from '../../types';
 
+import { submitLeadToGoogleSheet } from '../../services/googleSheetService';
+import { isValidEmail, isValidPhone } from '../../utils/helpers';
+
 const initialState: FormState = { success: false, message: '', errors: {} };
 
 async function contactAction(_prevState: FormState, formData: FormData): Promise<FormState> {
   const errors: Record<string, string> = {};
-  if (!formData.get('name')) errors.name = 'Name is required';
-  if (!formData.get('email')) errors.email = 'Email is required';
-  if (!formData.get('phone')) errors.phone = 'Mobile is required';
+  const name = (formData.get('name') as string)?.trim();
+  const email = (formData.get('email') as string)?.trim();
+  const phone = (formData.get('phone') as string)?.trim();
+  const city = (formData.get('city') as string)?.trim();
+  const message = (formData.get('message') as string)?.trim();
+
+  if (!name) errors.name = 'Name is required';
+  if (!email) {
+    errors.email = 'Email is required';
+  } else if (!isValidEmail(email)) {
+    errors.email = 'Please enter a valid email address';
+  }
+  
+  if (!phone) {
+    errors.phone = 'Mobile is required';
+  } else if (!isValidPhone(phone)) {
+    errors.phone = 'Please enter a valid 10-digit Indian mobile number';
+  }
+
+  if (!city) errors.city = 'City is required';
+  if (!message) errors.message = 'Message is required';
   
   if (Object.keys(errors).length > 0) {
-    return { success: false, message: 'Please provide required fields.', errors };
+    return { success: false, message: 'Please fix the errors below.', errors };
   }
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  // Submit to Google Sheets
+  const success = await submitLeadToGoogleSheet({
+    name,
+    email,
+    phone,
+    city,
+    message,
+    source: 'Contact Page'
+  });
+
+  if (!success) {
+    return { success: false, message: 'Submission failed. Please try again or contact us directly.', errors: {} };
+  }
+
   return { success: true, message: 'Thank you! Our counselor will contact you within 24 hours.', errors: {} };
 }
 
@@ -101,49 +136,64 @@ export function Contact() {
                   Let's connect and make your admission journey easier !
                 </h3>
 
-                <form action={formAction} noValidate className="space-y-2">
-                  <input
-                    name="name"
-                    type="text"
-                    required
-                    placeholder="Name"
-                    className={minimalInputClass}
-                    autoComplete="name"
-                  />
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="Email"
-                    className={minimalInputClass}
-                    autoComplete="email"
-                  />
-                  <input
-                    name="phone"
-                    type="tel"
-                    required
-                    placeholder="Mobile"
-                    className={minimalInputClass}
-                    autoComplete="tel"
-                  />
-                  <input
-                    name="city"
-                    type="text"
-                    placeholder="City"
-                    className={minimalInputClass}
-                  />
-                  <input
-                    name="message"
-                    type="text"
-                    placeholder="Message"
-                    className={minimalInputClass}
-                  />
+                <form action={formAction} noValidate className="space-y-1">
+                  <div>
+                    <input
+                      name="name"
+                      type="text"
+                      required
+                      placeholder="Name *"
+                      className={minimalInputClass}
+                      autoComplete="name"
+                    />
+                    {state.errors?.name && <p className="text-[11px] text-red-500 mt-0.5 ml-1">{state.errors.name}</p>}
+                  </div>
+                  <div>
+                    <input
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Email *"
+                      className={minimalInputClass}
+                      autoComplete="email"
+                    />
+                    {state.errors?.email && <p className="text-[11px] text-red-500 mt-0.5 ml-1">{state.errors.email}</p>}
+                  </div>
+                  <div>
+                    <input
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder="Mobile *"
+                      className={minimalInputClass}
+                      autoComplete="tel"
+                    />
+                    {state.errors?.phone && <p className="text-[11px] text-red-500 mt-0.5 ml-1">{state.errors.phone}</p>}
+                  </div>
+                  <div>
+                    <input
+                      name="city"
+                      type="text"
+                      required
+                      placeholder="City *"
+                      className={minimalInputClass}
+                    />
+                    {state.errors?.city && <p className="text-[11px] text-red-500 mt-0.5 ml-1">{state.errors.city}</p>}
+                  </div>
+                  <div>
+                    <input
+                      name="message"
+                      type="text"
+                      required
+                      placeholder="Message *"
+                      className={minimalInputClass}
+                    />
+                    {state.errors?.message && <p className="text-[11px] text-red-500 mt-0.5 ml-1">{state.errors.message}</p>}
+                  </div>
 
-                  {state.message && !state.success && (
-                    <p className="text-[14px] text-red-600 pt-3" role="alert">{state.message}</p>
-                  )}
-
-                  <SubmitButton />
+                  <div className="pt-2">
+                    <SubmitButton />
+                  </div>
                 </form>
               </>
             )}

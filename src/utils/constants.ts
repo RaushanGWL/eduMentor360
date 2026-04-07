@@ -114,3 +114,7 @@ export const BLOG_POSTS: BlogPost[] = [
   { id: 2, title: 'How to Choose the Right Career Path: A Complete Guide for Class 12 Students', excerpt: 'Confused about what to study after Class 12? This comprehensive guide walks you through career assessment frameworks, emerging fields, salary insights, and how to align your passion with prospects.', category: 'Career Guide', date: 'March 15, 2025', author: 'Rajesh Kumar', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80', readTime: '12 min read', categoryColor: 'bg-green-100 text-green-700' },
   { id: 3, title: 'Studying Abroad in 2025: Universities, Costs, Scholarships & Application Tips', excerpt: 'Everything you need to know about international education—from selecting the right country and university to securing scholarships, obtaining student visas, and thriving in a new academic environment.', category: 'Study Abroad', date: 'March 5, 2025', author: 'Priya Mehta', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80', readTime: '10 min read', categoryColor: 'bg-secondary-100 text-secondary-700' },
 ];
+
+// Lead Capture API Configuration
+// Once you deploy your Google Apps Script, replace this placeholder with your Web App URL.
+export const GOOGLE_SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbyAHneEdH6Y5hF-JCKbdbpkyQL32uW72XVvtMdsXGOkG19aBgzCJbnYeT4elPENWaY-/exec';
