@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, Mail } from 'lucide-react';
 import Button from '../common/Button';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 export function CTABanner() {
+  const { openEnquiryModal } = useModal();
+
   return (
     <section
       className="relative py-20 lg:py-28 overflow-hidden"
@@ -47,7 +49,7 @@ export function CTABanner() {
 
           {/* Subtext */}
           <p className="text-purple-200 text-lg sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed">
-            Join 8,500+ students who have successfully secured their dream colleges with Edu Mentor 360. 
+            Join 8,500+ students who have successfully secured their dream colleges with B-tech Direct Admission. 
             Our expert counselors are ready to guide you to your perfect academic destination.
           </p>
 
@@ -60,7 +62,7 @@ export function CTABanner() {
             <Button
               variant="secondary"
               size="xl"
-              onClick={() => scrollToSection('#contact')}
+              onClick={openEnquiryModal}
               rightIcon={<ArrowRight className="w-6 h-6" />}
             >
               Book Free Counseling Session
@@ -68,7 +70,7 @@ export function CTABanner() {
             <Button
               variant="outline"
               size="xl"
-              onClick={() => scrollToSection('#contact')}
+              onClick={openEnquiryModal}
               className="border-white/40 text-white hover:bg-white/10 hover:border-white hover:text-white focus:ring-white"
             >
               Learn More
@@ -78,19 +80,19 @@ export function CTABanner() {
           {/* Contact info */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-purple-300">
             <a
-              href="tel:+918001234567"
+              href="tel:+917323020613"
               className="flex items-center gap-2 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
             >
               <Phone className="w-4 h-4 text-secondary-400" aria-hidden="true" />
-              <span className="text-sm font-medium">+91 800 123 4567</span>
+              <span className="text-sm font-medium">+91 7323020613</span>
             </a>
             <span className="hidden sm:block text-purple-600" aria-hidden="true">|</span>
             <a
-              href="mailto:hello@edumentor360.in"
+              href="mailto:help@edumentor360.in"
               className="flex items-center gap-2 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
             >
               <Mail className="w-4 h-4 text-secondary-400" aria-hidden="true" />
-              <span className="text-sm font-medium">hello@edumentor360.in</span>
+              <span className="text-sm font-medium">help@edumentor360.in</span>
             </a>
           </div>
         </motion.div>

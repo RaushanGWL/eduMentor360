@@ -1,5 +1,6 @@
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { ModalProvider } from '../../context/ModalContext';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,13 +8,15 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main id="main-content" role="main" className="flex-1">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <ModalProvider>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main id="main-content" role="main" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </ModalProvider>
   );
 }
 

@@ -90,23 +90,92 @@ export const WHY_CHOOSE_US: Feature[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: 1, name: 'Arjun Patel', role: 'B.Tech CSE Student', college: 'BITS Pilani', avatar: 'AP', avatarBg: 'bg-primary-600', rating: 5, quote: 'Edu Mentor 360 completely transformed my college admission journey. Their expert counselors helped me identify my strengths and guided me to the perfect engineering program. I\'m now pursuing my dream course!' },
-  { id: 2, name: 'Priya Sharma', role: 'MBA Student', college: 'IIM Ahmedabad', avatar: 'PS', avatarBg: 'bg-blue-600', rating: 5, quote: 'The team at Edu Mentor 360 is exceptional. They provided step-by-step guidance through every stage of the CAT preparation and IIM application process. Their mentorship was invaluable.' },
-  { id: 3, name: 'Rahul Verma', role: 'MS Computer Science', college: 'Georgia Tech, USA', avatar: 'RV', avatarBg: 'bg-green-600', rating: 5, quote: 'Dreaming of studying abroad seemed impossible until I connected with Edu Mentor 360. They helped me craft a stellar SOP, prepare for GRE, and shortlist the best universities for my profile.' },
-  { id: 4, name: 'Sneha Kapoor', role: 'MBBS Student', college: 'Manipal Medical College', avatar: 'SK', avatarBg: 'bg-pink-600', rating: 5, quote: 'Getting into medical college through management quota seemed daunting. Edu Mentor 360 made the entire process transparent, straightforward, and stress-free. Truly life-changing guidance!' },
-  { id: 5, name: 'Aditya Nair', role: 'B.Tech ECE Student', college: 'NIT Trichy', avatar: 'AN', avatarBg: 'bg-secondary-500', rating: 5, quote: 'I was confused about which college to choose after JEE results. The counselors at Edu Mentor 360 did a thorough analysis of my profile and helped me make the best decision for my career.' },
-  { id: 6, name: 'Kavya Reddy', role: 'BBA Student', college: 'Symbiosis Pune', avatar: 'KR', avatarBg: 'bg-teal-600', rating: 5, quote: 'Edu Mentor 360 helped me discover that management was my true calling. Their comprehensive career assessment and guidance helped me secure admission in one of the top BBA programs in India.' },
-  { id: 7, name: 'Rohan Gupta', role: 'B.Arch Student', college: 'SPA Delhi', avatar: 'RG', avatarBg: 'bg-purple-700', rating: 5, quote: 'The scholarship guidance from Edu Mentor 360 saved my family over 2 lakhs in fees. They identified scholarships I never knew existed and helped me with every part of the application.' },
-  { id: 8, name: 'Ananya Menon', role: 'B.Sc Data Science', college: 'IIT Hyderabad', avatar: 'AM', avatarBg: 'bg-indigo-600', rating: 5, quote: 'From profile building to final admission, Edu Mentor 360 was by my side at every step. Their 24/7 support and expertise made a complex process feel effortless. Highly recommended!' },
+  { id: 1, name: 'Arjun Patel', role: 'B.Tech CSE Student', college: 'BITS Pilani', avatar: 'AP', avatarBg: 'bg-primary-600', rating: 5, quote: 'B-tech Direct Admission completely transformed my college admission journey. Their expert counselors helped me identify my strengths and guided me to the perfect engineering program. I\'m now pursuing my dream course!' },
+  { id: 2, name: 'Priya Sharma', role: 'MBA Student', college: 'IIM Ahmedabad', avatar: 'PS', avatarBg: 'bg-blue-600', rating: 5, quote: 'The team at B-tech Direct Admission is exceptional. They provided step-by-step guidance through every stage of the CAT preparation and IIM application process. Their mentorship was invaluable.' },
+  { id: 3, name: 'Rahul Verma', role: 'MS Computer Science', college: 'Georgia Tech, USA', avatar: 'RV', avatarBg: 'bg-green-600', rating: 5, quote: 'Dreaming of studying abroad seemed impossible until I connected with B-tech Direct Admission. They helped me craft a stellar SOP, prepare for GRE, and shortlist the best universities for my profile.' },
+  { id: 4, name: 'Sneha Kapoor', role: 'MBBS Student', college: 'Manipal Medical College', avatar: 'SK', avatarBg: 'bg-pink-600', rating: 5, quote: 'Getting into medical college through management quota seemed daunting. B-tech Direct Admission made the entire process transparent, straightforward, and stress-free. Truly life-changing guidance!' },
+  { id: 5, name: 'Aditya Nair', role: 'B.Tech ECE Student', college: 'NIT Trichy', avatar: 'AN', avatarBg: 'bg-secondary-500', rating: 5, quote: 'I was confused about which college to choose after JEE results. The counselors at B-tech Direct Admission did a thorough analysis of my profile and helped me make the best decision for my career.' },
+  { id: 6, name: 'Kavya Reddy', role: 'BBA Student', college: 'Symbiosis Pune', avatar: 'KR', avatarBg: 'bg-teal-600', rating: 5, quote: 'B-tech Direct Admission helped me discover that management was my true calling. Their comprehensive career assessment and guidance helped me secure admission in one of the top BBA programs in India.' },
+  { id: 7, name: 'Rohan Gupta', role: 'B.Arch Student', college: 'SPA Delhi', avatar: 'RG', avatarBg: 'bg-purple-700', rating: 5, quote: 'The scholarship guidance from B-tech Direct Admission saved my family over 2 lakhs in fees. They identified scholarships I never knew existed and helped me with every part of the application.' },
+  { id: 8, name: 'Ananya Menon', role: 'B.Sc Data Science', college: 'IIT Hyderabad', avatar: 'AM', avatarBg: 'bg-indigo-600', rating: 5, quote: 'From profile building to final admission, B-tech Direct Admission was by my side at every step. Their 24/7 support and expertise made a complex process feel effortless. Highly recommended!' },
 ];
 
 export const FAQS: FAQ[] = [
-  { id: 1, question: 'What types of admissions does Edu Mentor 360 help with?', answer: 'We assist with undergraduate (B.Tech, MBBS, BBA, B.Sc), postgraduate (MBA, M.Tech, MS), and doctoral admissions across top Indian universities and international institutions in the USA, UK, Canada, Australia, and Europe. We handle both entrance-exam based and management quota admissions.' },
-  { id: 2, question: 'Is the initial consultation really free?', answer: 'Absolutely! Our first counseling session is completely free with no obligations. We use this session to understand your academic background, career goals, and preferences, after which we create a personalized roadmap for your educational journey.' },
-  { id: 3, question: 'How do you help students who did not qualify entrance exams?', answer: 'We specialize in management quota and NRI quota admissions for students who could not qualify or appear for entrance exams like JEE, NEET, or CAT. Through our direct partnerships with 350+ institutions, we can secure confirmed seats in top colleges based on your Class 12 or graduation marks.' },
-  { id: 4, question: 'What documents are typically required for admission support?', answer: 'Standard documents include: 10th & 12th mark sheets, transfer certificate, character certificate, passport-size photographs, government ID proof (Aadhar/Passport), and category certificate if applicable. For international admissions, we also need your GRE/IELTS/TOEFL scores and a valid passport.' },
-  { id: 5, question: 'How long does the entire admission process take?', answer: 'The timeline varies by program and institution. Domestic management quota admissions can be completed in 2–4 weeks after initial consultation. International admissions typically require 4–8 months, which is why we recommend starting the process early—ideally 1 year before your intended enrollment date.' },
-  { id: 6, question: 'Do you provide scholarship assistance as part of your services?', answer: 'Yes! Scholarship guidance is one of our core services. We maintain an updated database of merit scholarships, need-based aid, government scholarships, and university-specific grants. We help you identify eligible scholarships and assist with the entire application process to maximize your funding.' },
+  { 
+    id: 1, 
+    question: "Let’s start with the basics. What's the difference between BE and BTech?", 
+    answer: "Engineering, at its core, is about solving problems using physics, math, and creativity. B.E. (Bachelor of Engineering) is slightly more theory-heavy and rooted in the traditional university model, focusing on the science and principles. B.Tech (Bachelor of Technology) is more application-focused, with more labs, hands-on work, and industry orientation. Practically, employers treat them as equivalent; what matters far more is your college's reputation, your grades, and what you've actually built or done." 
+  },
+  { 
+    id: 2, 
+    question: "Is there a difference when it comes to the practical life? While you’re searching for a job or switching your career?", 
+    answer: "In reality, employers treat them as equivalent. When an HR person sees your resume, they're not going to say, 'Oh, B.E.? Sorry, we only take B.Tech.' What matters far more is your college's reputation, your grades, and what you've actually built or done. The distinction matters a little more if you're going into research or higher education — but for the job market, don't lose sleep over it." 
+  },
+  { 
+    id: 3, 
+    question: "How do you get into such good universities in Bangalore or anywhere in India?", 
+    answer: "Bangalore’s Golden Duo: KCET + COMEDK – Plus Management Magic, Your Ticket to Top Colleges. KCET from KEA unlocks government quota seats (approx. Rs 60K/year). COMEDK is the private college gateway for 150+ colleges. Preparation for both overlaps with JEE (PCM). In short, KCET, COMEDK, and management quota are your full arsenal for colleges like PES, Ramaiah, Dayananda Sagar, RVCE, and BMS." 
+  },
+  { 
+    id: 4, 
+    question: "Why should I consider all three: KCET, COMEDK, and management quota?", 
+    answer: "Ultimate flexibility! KCET for value, COMEDK for choices, and management for premium security—no rank gamble, direct top branch. The top families often choose management for certainty. This trio ensures you win by providing an empowering move for committed students." 
+  },
+  { 
+    id: 5, 
+    question: "What are the engineering branches available and which ones are the most in-demand?", 
+    answer: "The core branches are Mechanical, Civil, ECE, and Chemical. However, Computer Science (CS) remains king, especially with AI, cloud, and cybersecurity. Electronics and VLSI are growing as India builds its chip ecosystem. Electrical engineers are in demand due to the EV revolution. Civil and Mechanical remain evergreen gems, while Biomedical and Aerospace offer niche but fascinating opportunities. CS and IT currently offer the fastest and widest job market access." 
+  },
+  { 
+    id: 6, 
+    question: "What’s the actual difference between CSE, AI, and IT?", 
+    answer: "Computer Science Engineering (CSE) is the broadest and most foundational, covering everything from algorithms to operating systems. Information Technology (IT) is more focused on using technology (networking, systems management, software apps). AI/ML is the most specialized, diving deep into neural networks and intelligent systems, making it mathematically demanding." 
+  },
+  { 
+    id: 7, 
+    question: "Which branch should I choose? Interest or placements?", 
+    answer: "If you have a genuine, burning interest in something, follow that interest. Passion is fuel. You'll study harder, learn more, and ultimately be better at your job. However, if your real goal is financial stability, there's no shame in being strategic. Pick the branch with better placement records and then build genuine interest over time. Interest is often a byproduct of getting good at something." 
+  },
+  { 
+    id: 8, 
+    question: "Is my career over if I don't get into an IIT/NIT/IIIT?", 
+    answer: "Practically? No! There's a whole tier of colleges that are genuinely excellent and significantly more accessible. Especially in Bangalore, you're spoiled for choice. Nationally strong private institutes include BITS Pilani, VIT Vellore, MIT Manipal, and SRM. Bangalore-specific top options include RVCE, PES University, MS Ramaiah, BMS, and Dayananda Sagar." 
+  },
+  { 
+    id: 9, 
+    question: "Do you get a recognised degree from autonomous colleges in Bangalore?", 
+    answer: "Yes! VTU (Visvesvaraya Technological University) is the university that affiliates most engineering colleges in Karnataka, including many in Bangalore. Even if a college is autonomous, the degree remains recognized and valuable." 
+  },
+  { 
+    id: 10, 
+    question: "Is VTU recognized for engineering?", 
+    answer: "As a university system, VTU has a strong legacy and its degree is well-recognized across India. The curriculum has been modernized over the years. VTU provides the framework, and the individual college shapes your experience. Focus on picking the right college, and the VTU affiliation will take care of itself." 
+  },
+  { 
+    id: 11, 
+    question: "Why go for expensive institutions if both get the degree from VTU?", 
+    answer: "The experience varies hugely depending on the college. RVCE, Ramaiah, and BMS are VTU-affiliated and excellent. A lesser-known VTU college in a smaller town might offer a very different experience. Better private colleges often have significantly better placement salaries, making them a smart investment." 
+  },
+  { 
+    id: 12, 
+    question: "Are expensive private colleges worth the higher fee?", 
+    answer: "It depends on the ROI. A random private college charging high fees with average placements might be hard to justify. However, a better private college charging higher fees but providing average packages of 15-20 LPA is a smart investment that can be recovered within a few years of working." 
+  },
+  { 
+    id: 13, 
+    question: "What is the framework to evaluate the best college?", 
+    answer: "Consider three questions: What is the average placement salary? What is the total 4-year cost (including fees and living expenses)? Can you realistically recover that investment within 2 to 3 years? If a college places students at 12-15 LPA after a 30 lakh investment, the math works." 
+  },
+  { 
+    id: 14, 
+    question: "What is the practical roadmap for engineering admissions?", 
+    answer: "1. Nail the entrance exams (JEE Main, BITSAT, KCET, COMEDK). 2. Don't ignore board marks, as they are factored into KCET. 3. Apply under the right reservation categories for a legal advantage. 4. Research management quota carefully if you need a direct top branch. 5. Visit the campus to see infrastructure and talk to current students before paying fees." 
+  },
+  { 
+    id: 15, 
+    question: "Is engineering genuinely worth it?", 
+    answer: "Engineering is genuinely worth it—but it rewards the intentional. Know why you're doing it, pick your college and branch thoughtfully, and then put in the work. The opportunities are very much there. We are happy to help you clear out any doubts!" 
+  },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [

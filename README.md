@@ -1,6 +1,6 @@
-# Edu Mentor 360
+# B-tech Direct Admission
 
-A modern, fully static React 19 application for **Edu Mentor 360** — a trusted educational mentoring platform for career counseling, university admissions, scholarship guidance, and study abroad programs.
+A modern, fully static React 19 application for **B-tech Direct Admission** — a trusted educational mentoring platform for career counseling, university admissions, scholarship guidance, and study abroad programs.
 
 ## Tech Stack
 

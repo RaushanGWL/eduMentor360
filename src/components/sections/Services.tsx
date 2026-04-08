@@ -4,7 +4,7 @@ import {
 } from 'lucide-react';
 import { SERVICES } from '../../utils/constants';
 import SectionHeader from '../common/SectionHeader';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   GraduationCap, Building2, Award, Globe, BookOpen, TrendingUp,
@@ -21,6 +21,7 @@ const cardVariants = {
 };
 
 export function Services() {
+  const { openEnquiryModal } = useModal();
   return (
     <section id="services" className="section-padding bg-section-alt">
       <div className="container-custom">
@@ -74,7 +75,7 @@ export function Services() {
 
                 {/* Learn More */}
                 <button
-                  onClick={() => scrollToSection('#contact')}
+                  onClick={openEnquiryModal}
                   className={`inline-flex items-center gap-1.5 text-sm font-semibold ${service.color} hover:gap-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded`}
                   aria-label={`Learn more about ${service.title}`}
                 >
@@ -96,7 +97,7 @@ export function Services() {
         >
           <p className="text-gray-500 mb-4">Not sure which service is right for you?</p>
           <button
-            onClick={() => scrollToSection('#contact')}
+            onClick={openEnquiryModal}
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 active:bg-primary-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-md hover:shadow-glow"
           >
             Talk to an Expert

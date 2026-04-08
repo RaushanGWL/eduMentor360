@@ -60,7 +60,7 @@ export function AboutPage() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6"
           >
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-200">Edu Mentor 360</span>
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-200">B-tech Direct Admission</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* What is EduMentor for you? */}
+      {/* What is B-tech Direct Admission for you? */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -87,17 +87,17 @@ export function AboutPage() {
                 Our Story
               </span>
               <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight mb-6">
-                What is <span className="text-gradient">Edu Mentor 360</span> For You?
+                What is <span className="text-gradient">B-tech Direct Admission</span> For You?
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  At Edu Mentor 360, we’re here to make your college admission journey smooth, simple, and stress-free! With over 12+ years of experience and partnerships with 350+ universities across India and abroad, we’ve helped thousands of students find their dream college and course.
+                  At B-tech Direct Admission, we’re here to make your college admission journey smooth, simple, and stress-free! With over 12+ years of experience and partnerships with 350+ universities across India and abroad, we’ve helped thousands of students find their dream college and course.
                 </p>
                 <p>
                   We understand that choosing the right college can feel overwhelming — but you don’t have to do it alone. Whether it’s direct admissions, management quota seats, or personalized counseling, our team is here to guide you every step of the way.
                 </p>
                 <p className="font-medium text-primary-700 bg-primary-50 p-4 rounded-xl border-l-4 border-primary-500">
-                  At Edu Mentor 360, it’s not just about getting a seat — it’s about finding the right seat for your future!
+                  At B-tech Direct Admission, it’s not just about getting a seat — it’s about finding the right seat for your future!
                 </p>
               </div>
             </motion.div>
@@ -130,7 +130,7 @@ export function AboutPage() {
           <SectionHeader
             badge="Our Values"
             title="Our Core Values"
-            subtitle="At Edu Mentor 360, our values define how we work and who we are."
+            subtitle="At B-tech Direct Admission, our values define how we work and who we are."
             centered={true}
           />
 

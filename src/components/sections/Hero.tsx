@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
-import EnquiryModal from './EnquiryModal';
+import { useModal } from '../../context/ModalContext';
 
 import heroBanner from '../../assets/Home-page-banner.jpg';
 
@@ -10,8 +9,6 @@ const HERO_BADGES = [
   { text: 'Easy Admissions' },
   { text: '7+ Years Experience' },
 ];
-
-
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -24,7 +21,7 @@ const itemVariants = {
 };
 
 export function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openEnquiryModal } = useModal();
 
   return (
     <section
@@ -109,7 +106,7 @@ export function Hero() {
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={openEnquiryModal}
                 className="px-8 py-4 bg-gradient-to-r from-gray-900 to-purple-500 hover:from-gray-800 hover:to-purple-400 text-white font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg sm:text-xl"
               >
                 Book a Free Counseling
@@ -136,8 +133,6 @@ export function Hero() {
           <div className="w-1 h-2 bg-white/50 rounded-full" />
         </motion.div>
       </motion.div>
-
-      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

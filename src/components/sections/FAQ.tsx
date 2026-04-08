@@ -3,9 +3,10 @@ import { MessageCircleQuestion, ArrowRight } from 'lucide-react';
 import { FAQS } from '../../utils/constants';
 import Accordion from '../common/Accordion';
 import SectionHeader from '../common/SectionHeader';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 export function FAQ() {
+  const { openEnquiryModal } = useModal();
   return (
     <section id="faq" className="section-padding bg-white">
       <div className="container-custom">
@@ -47,7 +48,7 @@ export function FAQ() {
                   Our expert counselors are available Monday–Saturday, 9 AM to 7 PM IST to help you with any admission queries.
                 </p>
                 <button
-                  onClick={() => scrollToSection('#contact')}
+                  onClick={openEnquiryModal}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-secondary-500 hover:bg-secondary-600 text-white rounded-xl text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 shadow-md"
                   aria-label="Contact our counselors"
                 >
@@ -77,7 +78,7 @@ export function FAQ() {
               className="mt-6 text-center"
             >
               <button
-                onClick={() => scrollToSection('#contact')}
+                onClick={openEnquiryModal}
                 className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-primary-500 rounded"
               >
                 Can't find your answer? Contact us

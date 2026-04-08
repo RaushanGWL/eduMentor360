@@ -1,10 +1,10 @@
 # Google Sheets Setup Guide for Lead Capture
 
-To connect your EduMentor website to Google Sheets, follow these steps exactly. This will allow you to see your leads in real-time, and it will automatically update existing users if they submit the form again.
+To connect your B-tech Direct Admission website to Google Sheets, follow these steps exactly. This will allow you to see your leads in real-time, and it will automatically update existing users if they submit the form again.
 
 ## 1. Create your Google Sheet
 1. Open [Google Sheets](https://sheets.new).
-2. Rename it to something like **EduMentor Leads**.
+2. Rename it to something like **B-tech Direct Admission Leads**.
 3. Create the following headers in the first row (**Row 1**):
    | A | B | C | D | E | F | G |
    |---|---|---|---|---|---|---|
@@ -16,7 +16,7 @@ To connect your EduMentor website to Google Sheets, follow these steps exactly. 
 
 ```javascript
 /*
-  EduMentor Lead Capture Script
+  B-tech Direct Admission Lead Capture Script
   Handles POST requests from the website.
   Updates existing rows based on Email match.
 */
@@ -85,7 +85,7 @@ function doOptions(e) {
 ## 3. Deploy as a Web App
 1. Click the blue **Deploy** button > **New deployment**.
 2. Select type: **Web app**.
-3. Description: **EduMentor API**.
+3. Description: **B-tech Direct Admission API**.
 4. Execute as: **Me**.
 5. Who has access: **Anyone**. (This is necessary for your website to call it).
 6. Click **Deploy**.

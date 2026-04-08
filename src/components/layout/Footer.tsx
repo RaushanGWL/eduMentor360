@@ -1,8 +1,30 @@
+import { useCallback } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { GraduationCap, Mail, ArrowRight, ArrowUp } from 'lucide-react';
 import { NAV_LINKS } from '../../utils/constants';
 import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 export function Footer() {
+  const { openEnquiryModal } = useModal();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = useCallback((href: string) => {
+    if (href.startsWith('/')) {
+      navigate(href);
+      window.scrollTo(0, 0);
+    } else if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/');
+        // Wait for render before scrolling
+        setTimeout(() => scrollToSection(href), 100);
+      } else {
+        scrollToSection(href);
+      }
+    }
+  }, [navigate, location.pathname]);
+
   return (
     <>
       <footer className="bg-white text-gray-600 border-t border-gray-100 pb-8 pt-16 lg:pt-20" role="contentinfo">
@@ -16,15 +38,15 @@ export function Footer() {
                   <GraduationCap className="w-7 h-7 text-white" aria-hidden="true" />
                 </div>
                 <span className="font-heading font-extrabold text-[#3a206b] text-xl uppercase tracking-wide">
-                  Edu Mentor 360
+                  B-tech Direct Admission
                 </span>
               </div>
               <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-                At Edu Mentor 360, it's not just about getting a seat – it's about finding the right seat for your future!
+                At B-tech Direct Admission, it's not just about getting a seat – it's about finding the right seat for your future!
               </p>
               
               <button 
-                onClick={() => scrollToSection('#contact')}
+                onClick={openEnquiryModal}
                 className="group relative inline-flex items-center justify-center p-[2px] rounded-full overflow-hidden font-semibold"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-primary-300 rounded-full" />
@@ -41,7 +63,7 @@ export function Footer() {
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
                     <button
-                      onClick={() => scrollToSection(link.href)}
+                      onClick={() => handleNavClick(link.href)}
                       className="text-gray-500 hover:text-primary-600 text-[15px] font-medium transition-colors duration-200 focus:outline-none"
                     >
                       {link.label}
@@ -55,8 +77,8 @@ export function Footer() {
             <div className="lg:col-span-5">
               <h3 className="font-heading font-bold text-gray-900 mb-6 text-lg tracking-tight">Get Contact</h3>
               <div className="space-y-4 mb-8 text-[15px] text-gray-500 font-medium">
-                <p>Phone: +91 800 123 4567</p>
-                <p>E-mail: hello@edumentor360.in</p>
+                <p>Phone: +91 7323020613</p>
+                <p>E-mail: help@edumentor360.in</p>
               </div>
 
               <h4 className="font-heading font-bold text-gray-900 mb-3 text-[17px] tracking-tight">Newsletter</h4>
@@ -93,7 +115,7 @@ export function Footer() {
           </p>
           <div className="h-[1px] bg-gray-100 w-full mb-4"></div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 pb-4">
-            <p>Copyright © {new Date().getFullYear()} <span className="font-semibold text-gray-700">Edu Mentor 360</span> All Rights Reserved</p>
+            <p>Copyright © {new Date().getFullYear()} <span className="font-semibold text-gray-700">B-tech Direct Admission</span> All Rights Reserved</p>
             <div className="flex items-center gap-2">
               <a href="#" className="hover:text-primary-600 transition-colors">Terms & Conditions</a>
               <span className="text-gray-300">|</span>
@@ -106,7 +128,7 @@ export function Footer() {
       {/* Floating Buttons Panel */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
         <a 
-          href="https://wa.me/918001234567" 
+          href="https://wa.me/917323020613" 
           target="_blank" 
           rel="noopener noreferrer"
           className="bg-[#25D366] text-white p-3.5 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-opacity-50 flex items-center justify-center cursor-pointer"

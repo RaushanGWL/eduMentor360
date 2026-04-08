@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Star, ArrowRight, Bookmark, GraduationCap } from 'lucide-react';
 import { FEATURED_COLLEGES } from '../../utils/constants';
 import SectionHeader from '../common/SectionHeader';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 const containerVariants = {
   hidden: {},
@@ -15,6 +15,8 @@ const cardVariants = {
 };
 
 export function FeaturedColleges() {
+  const { openEnquiryModal } = useModal();
+
   return (
     <section id="colleges" className="section-padding bg-white">
       <div className="container-custom">
@@ -95,13 +97,13 @@ export function FeaturedColleges() {
                       <GraduationCap className="w-5 h-5" aria-hidden="true" />
                     </div>
                     <p className="text-sm font-semibold text-gray-900">
-                      Direct Admission <span className="font-normal text-gray-500">By</span> Edu Mentor 360
+                      Direct Admission <span className="font-normal text-gray-500">By</span> B-tech Direct Admission
                     </p>
                   </div>
                   
                   {/* Button */}
                   <button
-                    onClick={() => scrollToSection('#contact')}
+                    onClick={openEnquiryModal}
                     className="flex items-center justify-center gap-2 py-2 px-4 bg-gray-50 hover:bg-gray-100 text-gray-900 rounded border border-gray-100 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200 group whitespace-nowrap"
                     aria-label={`Get direct admission to ${college.name}`}
                   >
@@ -124,7 +126,7 @@ export function FeaturedColleges() {
         >
           <p className="text-gray-500 text-sm mb-4">We partner with 350+ institutions across India and globally.</p>
           <button
-            onClick={() => scrollToSection('#contact')}
+            onClick={openEnquiryModal}
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-primary-500 rounded"
           >
             Explore All Partner Institutions

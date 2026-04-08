@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Users, HandHeart, Headphones, ArrowRight } from 'lucide-react';
 import { WHY_CHOOSE_US } from '../../utils/constants';
 import SectionHeader from '../common/SectionHeader';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Users, HandHeart, Headphones,
@@ -16,6 +16,7 @@ const TRUST_SIGNALS = [
 ];
 
 export function WhyChooseUs() {
+  const { openEnquiryModal } = useModal();
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
@@ -31,7 +32,7 @@ export function WhyChooseUs() {
               badge="Why Choose Us"
               title={
                 <>
-                  Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">Edu Mentor 360?</span>
+                  Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">B-tech Direct Admission?</span>
                 </>
               }
               subtitle="We combine deep expertise with a genuine passion for student success to deliver outcomes that matter."
@@ -74,7 +75,7 @@ export function WhyChooseUs() {
               className="mt-8"
             >
               <button
-                onClick={() => scrollToSection('#contact')}
+                onClick={openEnquiryModal}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 shadow-md hover:shadow-glow"
               >
                 Get Free Consultation
@@ -96,7 +97,7 @@ export function WhyChooseUs() {
               {/* Replace with: happy students with counselors celebrating admission */}
               <img
                 src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&q=80"
-                alt="Students celebrating successful college admissions with Edu Mentor 360 counselors"
+                alt="Students celebrating successful college admissions with B-tech Direct Admission counselors"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

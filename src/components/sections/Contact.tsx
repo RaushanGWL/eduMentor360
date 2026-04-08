@@ -96,7 +96,7 @@ export function Contact() {
             </div>
             <div>
               <h3 className="font-bold text-[19px] text-[#111827] mb-1.5">Contact Phone Number</h3>
-              <p className="text-gray-500 font-medium">+91-800-123-4567</p>
+              <p className="text-gray-500 font-medium">+91-7323020613</p>
             </div>
           </div>
           
@@ -106,7 +106,7 @@ export function Contact() {
             </div>
             <div>
               <h3 className="font-bold text-[19px] text-[#111827] mb-1.5">Our Email Address</h3>
-              <p className="text-gray-500 font-medium">hello@edumentor360.in</p>
+              <p className="text-gray-500 font-medium">help@edumentor360.in</p>
             </div>
           </div>
         </div>

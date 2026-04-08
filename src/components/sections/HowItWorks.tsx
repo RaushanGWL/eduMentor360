@@ -3,13 +3,15 @@ import { PhoneCall, ClipboardList, Search, FileText, CheckCircle } from 'lucide-
 import { PROCESS_STEPS } from '../../utils/constants';
 import SectionHeader from '../common/SectionHeader';
 import Button from '../common/Button';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   PhoneCall, ClipboardList, Search, FileText, CheckCircle,
 };
 
 export function HowItWorks() {
+  const { openEnquiryModal } = useModal();
+
   return (
     <section id="how-it-works" className="section-padding bg-section-alt">
       <div className="container-custom">
@@ -19,7 +21,7 @@ export function HowItWorks() {
             badge="Our Process"
             title={
               <>
-                How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">Edu Mentor 360 Works</span>
+                How <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">B-tech Direct Admission Works</span>
               </>
             }
             subtitle="A simple, structured process designed to take you from uncertainty to your dream college admission in just 5 steps."
@@ -102,7 +104,7 @@ export function HowItWorks() {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => scrollToSection('#contact')}
+              onClick={openEnquiryModal}
             >
               Start Your Journey Today
             </Button>

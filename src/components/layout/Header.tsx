@@ -1,15 +1,15 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, GraduationCap, Phone, ArrowRight } from 'lucide-react';
+import { Menu, X, GraduationCap, Phone } from 'lucide-react';
 import { NAV_LINKS } from '../../utils/constants';
 import { scrollToSection } from '../../utils/helpers';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
-import EnquiryModal from '../sections/EnquiryModal';
+import { useModal } from '../../context/ModalContext';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openEnquiryModal } = useModal();
   const { isScrolled } = useScrollPosition(60);
   const navigate = useNavigate();
   const location = useLocation();
@@ -22,8 +22,8 @@ export function Header() {
       return;
     }
     // Open modal whenever the route changes
-    setIsModalOpen(true);
-  }, [location.pathname]);
+    openEnquiryModal();
+  }, [location.pathname, openEnquiryModal]);
 
   const forceSolidHeader = location.pathname === '/faq' || location.pathname === '/contact';
   const shouldShowSolid = isScrolled || forceSolidHeader;
@@ -63,13 +63,13 @@ export function Header() {
             <button
               onClick={() => handleNavClick('#home')}
               className="flex items-center gap-2.5 focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg"
-              aria-label="Edu Mentor 360 - Go to homepage"
+              aria-label="B-tech Direct Admission - Go to homepage"
             >
               <div className="w-9 h-9 bg-gradient-to-br from-primary-600 to-secondary-500 rounded-xl flex items-center justify-center shadow-md">
                 <GraduationCap className="w-5 h-5 text-white" aria-hidden="true" />
               </div>
               <span className={`font-heading font-bold text-xl tracking-tight ${shouldShowSolid ? 'text-gray-900' : 'text-white'}`}>
-                Edu Mentor <span className="text-secondary-400">360</span>
+                B-tech <span className="text-secondary-400">Direct Admission</span>
               </span>
             </button>
 
@@ -92,20 +92,19 @@ export function Header() {
 
             {/* CTA + Mobile toggle */}
             <div className="flex items-center gap-3">
-             
-              <button 
-                onClick={() => setIsModalOpen(true)}
+              <a 
+                href="tel:+917323020613"
                 className="hidden lg:flex group relative items-center justify-center p-[1.5px] rounded-full overflow-hidden font-heading font-bold transition-all duration-300 hover:shadow-lg"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-secondary-400" />
-                <span className={`relative flex items-center gap-2 px-7 py-2.5 rounded-full transition-all duration-300 ${
+                <span className={`relative flex items-center gap-6 px-8 py-2.5 rounded-full transition-all duration-300 ${
                   shouldShowSolid 
                     ? 'bg-white text-[#1f2937] group-hover:bg-transparent group-hover:text-white' 
                     : 'bg-white/10 backdrop-blur-md text-white group-hover:bg-white group-hover:text-[#1f2937]'
                 }`}>
-                  Book Free Counseling <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Call Now <Phone className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
                 </span>
-              </button>
+              </a>
               <button
                 onClick={toggleMenu}
                 className={`lg:hidden p-2 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 ${
@@ -152,7 +151,7 @@ export function Header() {
                     <GraduationCap className="w-5 h-5 text-white" />
                   </div>
                   <span className="font-heading font-bold text-xl text-gray-900">
-                    Edu Mentor <span className="text-secondary-500">360</span>
+                    B-tech <span className="text-secondary-500">Direct Admission</span>
                   </span>
                 </div>
                 <button
@@ -181,32 +180,29 @@ export function Header() {
 
               <div className="p-5 border-t border-gray-100 space-y-3">
                 <a
-                  href="tel:+918001234567"
+                  href="tel:+917323020613"
                   className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-50 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-200"
                 >
                   <Phone className="w-5 h-5" />
-                  <span className="font-medium">+91 800 123 4567</span>
+                  <span className="font-medium">+91 7323020613</span>
                 </a>
-                <button 
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    setIsModalOpen(true);
-                  }}
+                <a 
+                  href="tel:+917323020613"
                   className="w-full group relative flex items-center justify-center p-[2px] rounded-full overflow-hidden font-heading font-bold"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-secondary-400" />
                   <span className="relative flex-1 flex items-center justify-center gap-2 px-6 py-3.5 bg-white rounded-full text-[#1f2937]">
-                    Book Free Counseling <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Call Now <Phone className="w-5 h-5 ml-1" />
                   </span>
-                </button>
+                </a>
               </div>
             </motion.nav>
           </>
         )}
       </AnimatePresence>
-      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }
 
 export default Header;
+

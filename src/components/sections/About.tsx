@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, Award, Users, TrendingUp, ArrowRight } from 'lucide-react';
 import Button from '../common/Button';
-import { scrollToSection } from '../../utils/helpers';
+import { useModal } from '../../context/ModalContext';
 
 const HIGHLIGHTS = [
   { icon: Award, text: '12+ years of dedicated educational mentoring expertise' },
@@ -11,6 +11,8 @@ const HIGHLIGHTS = [
 ];
 
 export function About() {
+  const { openEnquiryModal } = useModal();
+
   return (
     <section id="about" className="section-padding bg-white">
       <div className="container-custom">
@@ -28,7 +30,7 @@ export function About() {
               {/* Replace with: counselor meeting with students in a modern office */}
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
-                alt="Edu Mentor 360 counselors working with students"
+                alt="B-tech Direct Admission counselors working with students"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -78,16 +80,16 @@ export function About() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-primary-100 text-primary-700 mb-4">
-              About Edu Mentor 360
+              About B-tech Direct Admission
             </span>
 
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-gray-900 leading-tight mb-6">
               Why Choose{' '}
-              <span className="text-gradient">Edu Mentor 360?</span>
+              <span className="text-gradient">B-tech Direct Admission?</span>
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Founded in 2012, Edu Mentor 360 is India's most trusted educational mentoring platform. 
+              Founded in 2012, B-tech Direct Admission is India's most trusted educational mentoring platform. 
               We don't just help students get admission—we help them discover the right academic path 
               aligned with their passions, strengths, and long-term career goals.
             </p>
@@ -113,7 +115,7 @@ export function About() {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => scrollToSection('#contact')}
+              onClick={openEnquiryModal}
               rightIcon={<ArrowRight className="w-5 h-5" />}
             >
               Get Free Consultation

@@ -56,7 +56,7 @@ export function Testimonials() {
               What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500">Students Say</span>
             </>
           }
-          subtitle="Real stories from real students. See how Edu Mentor 360 transformed their educational journeys."
+          subtitle="Real stories from real students. See how B-tech Direct Admission transformed their educational journeys."
         />
       </div>
 
