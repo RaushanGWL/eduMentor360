@@ -186,4 +186,4 @@ export const BLOG_POSTS: BlogPost[] = [
 
 // Lead Capture API Configuration
 // Once you deploy your Google Apps Script, replace this placeholder with your Web App URL.
-export const GOOGLE_SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbyAHneEdH6Y5hF-JCKbdbpkyQL32uW72XVvtMdsXGOkG19aBgzCJbnYeT4elPENWaY-/exec';
+export const GOOGLE_SHEET_API_URL = 'https://script.google.com/macros/s/AKfycbx8JiQQjc4H8DhXPRKiSk6ElRMVl3BJ4ZLba3P5SvPPkgkN86eP-CT1EKEfDmZsxErYxg/exec';
